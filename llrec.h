@@ -83,8 +83,29 @@ Node* llfilter(Node* head, Comp pred)
     //*********************************************
     // Provide your implementation below
     //*********************************************
+  
+    // condition to end recursive calls, end of list
+    if(head == nullptr){
+        return nullptr;
+    }
 
+    // create new node and set it equal to the recursive call
+    Node* nextcall = llfilter(head->next, pred);
 
+    // edit the list by checking if node needs to be removed or not
+    // first branch is true is node does NOT need to be removed
+    // second branch is for when the node does need to be removed
+    if(pred(head->val) == 0){
+        // connect the head pointer to the list after filtering
+        head->next = nextcall;
+        // return its value
+        return head;
+    } else {
+        // remove the node from memory that needs to be deleted
+        delete head;
+        // return the next call to the list thats filtered
+        return nextcall;
+    }
 }
 
 #endif

@@ -70,7 +70,6 @@ void dealloc(Node* head)
 
 
 
-
 int main(int argc, char* argv[])
 {
     if(argc < 2) {
@@ -84,12 +83,23 @@ int main(int argc, char* argv[])
     Node* head = readList(argv[1]);
     cout << "Original list: ";
     print(head);
+    cout << endl;
 
     // Test out your linked list code
+    Node* smaller = nullptr;
+    Node* larger = nullptr;
+    int pivot = 8;
 
+    llpivot(head, smaller, larger, pivot);
 
-
+    cout << "Smaller list: ";
+    print(smaller);
+    cout << endl;
     
+    cout << "Larger list: ";
+    print(larger);
+    cout << endl;
+
     return 0;
 
 }

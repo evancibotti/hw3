@@ -35,4 +35,13 @@ class Or2Gate : public Gate
       Event* update(uint64_t);
 };
 
+// not gate declaration
+// only need 2 wires because it has 1 input and 1 output
+class NotGate : public Gate
+{
+  public:
+      NotGate(Wire*, Wire*);
+      Event* update(uint64_t);
+};
+
 #endif
