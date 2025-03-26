@@ -10,8 +10,8 @@ template <typename T>
 class Stack : private std::vector<T>
 {
 public:
-    Stack();
-    ~Stack();
+    Stack() {};
+    ~Stack() {};
 
     bool empty() const {
         // return pointer to same function in vector class
